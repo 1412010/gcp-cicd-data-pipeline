@@ -16,6 +16,10 @@
 steps:
   # install dependencies
   - name: python:3.8-slim
+    entrypoint: python3.8
+    args: ["-m", "pip", "install", "--upgrade", "pip"]
+ 
+  - name: python:3.8-slim
     entrypoint: pip
     args: ["install", "-r", "requirements.txt", "-c", "constraints.txt", "--user"]
   
